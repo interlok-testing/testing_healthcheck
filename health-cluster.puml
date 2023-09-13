@@ -1,0 +1,19 @@
+```plantuml
+@startuml
+skinparam componentStyle rectangle
+
+package "Interlok" as Interlok {
+  [Readiness]
+  [Alive]
+  [Cluster]
+}
+
+package "K8s" as K8s {
+  [InterlokContainer]
+}
+
+[InterlokContainer] --> [Readiness]
+[InterlokContainer] --> [Alive]
+User --> [Cluster]
+@enduml
+```
