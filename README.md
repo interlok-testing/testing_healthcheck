@@ -1,5 +1,8 @@
 # Interlok Health-Check and Cluster Testing
 
+[![license](https://img.shields.io/github/license/interlok-testing/testing_healthcheck.svg)](https://github.com/interlok-testing/testing_healthcheck/blob/develop/LICENSE)
+[![Actions Status](https://github.com/interlok-testing/testing_healthcheck/actions/workflows/gradle-build.yml/badge.svg)](https://github.com/interlok-testing/testing_healthcheck/actions/workflows/gradle-build.yml)
+
 Project tests;
  - interlok-rest-cluster
  - interlok-rest-health-check
