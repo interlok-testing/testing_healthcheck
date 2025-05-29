@@ -1,7 +1,11 @@
 ext {
   interlokParentGradle = "https://raw.githubusercontent.com/adaptris/interlok-build-parent/main/v5/build.gradle"
+//  testingCommonGradle = "../testing_common/common.gradle"
+  interlokTestingVersion = "0.1"
   interlokVersion = '5.0-SNAPSHOT'
   buildEnv = 'dev'
+  includeWar='true'
+  restAssuredVersion = "5.5.0"
 }
 
 allprojects {
@@ -13,4 +17,9 @@ dependencies {
   interlokRuntime ("com.adaptris:interlok-json:$interlokVersion")
   interlokRuntime ("com.adaptris:interlok-rest-cluster:$interlokVersion")
   interlokRuntime ("com.adaptris:interlok-rest-health-check:$interlokVersion")
+  interlokRuntime ("com.adaptris:interlok-exec:$interlokVersion") { changing=true }
+  interlokJavadocs group: "com.adaptris", name: "interlok-exec", version: "$interlokVersion", classifier: "javadoc", changing: true, transitive: false
+  testImplementation "io.rest-assured:rest-assured:$restAssuredVersion"
+  testImplementation "io.rest-assured:json-path:$restAssuredVersion"
+  testImplementation group: "com.adaptris", name: "interlok-testing-common", version: "$interlokTestingVersion"
 }
