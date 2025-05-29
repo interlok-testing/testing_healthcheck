@@ -1,6 +1,5 @@
 ext {
-  interlokParentGradle = "https://raw.githubusercontent.com/adaptris/interlok-build-parent/main/v5/build.gradle"
-//  testingCommonGradle = "../testing_common/common.gradle"
+  testingCommonGradle = "https://raw.githubusercontent.com/interlok-testing/testing_common/refs/heads/master/common.gradle"
   interlokTestingVersion = "0.1"
   interlokVersion = '5.0-SNAPSHOT'
   buildEnv = 'dev'
@@ -9,7 +8,7 @@ ext {
 }
 
 allprojects {
-  apply from: "${interlokParentGradle}"
+  apply from: "${testingCommonGradle}"
 }
 
 dependencies {
